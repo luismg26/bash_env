@@ -1,4 +1,4 @@
 ---
 # defaults file for bash_env
 default_prompt: '[\u default \h in \W dir]\$ '
-#prompt_color: white
+prompt_color: white

@@ -1,0 +1,11 @@
+---
+# tasks file for bash_env
+- name: "Template del archivo .vimrc"
+  template:
+    src: vimrc.j2
+    dest: /etc/skel/.vimrc
+
+- name: "Template del archivo .bashrc"
+  template:
+    src: bashrc.j2
+    dest: /etc/skel/.bashrc

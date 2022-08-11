@@ -1,0 +1,39 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+PS1='{{ default_prompt }}'
+
+{% if default_color == 'black' %}
+PS1='\e[0;30m {{ default_prompt }} \e[m'
+{% endif %}
+
+{% if default_color == 'red' %}
+PS1='\e[0;31m {{ default_prompt }} \e[m'
+{% endif %}
+
+{% if default_color == 'green' %}
+PS1='\e[0;32m {{ default_prompt }} \e[m'
+{% endif %}
+
+{% if default_color == 'yellow' %}
+PS1='\e[0;33m {{ default_prompt }} \e[m'
+{% endif %}
+
+{% if default_color == 'blue' %}
+PS1='\e[0;34m {{ default_prompt }} \e[m'
+{% endif %}
